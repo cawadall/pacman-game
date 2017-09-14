@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <script src="pacman.js"></script>
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="pacman_stylesheet.css" media="screen">
+    <title>PACMAN GAME</title>
+  </head>
+
+  <body>
+    <!-- Ventana Modal -->
+    <div id="myModal" class="modal">
+         <!-- Contenido de la ventana -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 align="center" class="pm_letters">MENU</h2>
+          </div>
+          <div class="modal-body">
+               <p align="center">
+                  <button class="boton naranja" id="resume">Resume</button>
+                  <button onclick="location.reload()" class="boton naranja">Restart</button>
+               </p>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+    </div>
+    <div align="center">
+        <div id="gameinit">
+            <form method="post" id="form">
+                <fieldset>
+                <legend class="pm_letters">User:</legend>
+                <input id="POST-name" type="text" name="name" class="pm_letters">
+                <input type="button" value="OK" onclick="initmenu()" class="pm_letters">
+                </fieldset>
+            </form>
+            <p id="info"></p>
+            
+        </div>
+         <div class="controls" id="menu-buttons" style="display: none;">
+			<ul>
+				<li class="button" id="newGame" onclick="init()">New Game</li>
+				<li class="button" id="highscore" onclick="showHighscore()">Highscore</li>
+				<li class="button" id="instructions" onclick="showInstructions()">Instructions</li>
+				<li class="button" id="info" onclick="showInfo()">Info</li>
+			</ul>
+			
+</div>
+        <!--<canvas id="canvas" width="800" height="500">
+          Please use a browser that supports "canvas"
+        </canvas>-->
+        <div id="rightside" style="display: none;">
+            <table id="table">
+                <tr>
+                    <td><img src="lives.png" alt="LIVES:" width=100px height=40px></td>
+                    <td><img src="paclive.png" alt="" width=40px height=40px class="live"></td>
+                    <td><img src="paclive.png" alt="" width=40px height=40px class="live"></td>
+                    <td><img src="paclive.png" alt="" width=40px height=40px class="live"></td>
+                    <td><img src="score.png" alt="SCORE:" width=100px height=40px></img></td>
+                    <td id="score" class="pm_letters">0</td>
+                </tr>
+            </table>
+        </div>
+        <div id="leftside" style="display: none;">
+            <button id="menu" onclick="modalFunction()" class="pm_letters">MENU</button>
+            <p id="record" class="pm_letters">Record: 0 pts.</p>
+        </div>
+    </div>
+  </body>
+</html>
